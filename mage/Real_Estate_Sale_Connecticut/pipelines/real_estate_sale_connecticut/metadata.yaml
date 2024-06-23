@@ -52,7 +52,8 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
-  downstream_blocks: []
+  downstream_blocks:
+  - data_exporter_google_cloud_storage_full_file
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -65,6 +66,25 @@ blocks:
   upstream_blocks:
   - cleaning_property_residential_type_columns
   uuid: cleaning_non_use_code
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_path: data_exporters/data_exporter_google_cloud_storage_full_file.py
+    file_source:
+      path: data_exporters/data_exporter_google_cloud_storage_full_file.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: data_exporter_google_cloud_storage_full_file
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - cleaning_non_use_code
+  uuid: data_exporter_google_cloud_storage_full_file
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
