@@ -1,0 +1,91 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - cleaning_column_names
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: data_loading_from_API
+  retry_config: null
+  status: executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: data_loading_from_api
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - cleaning_property_residential_type_columns
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: cleaning_column_names
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - data_loading_from_api
+  uuid: cleaning_column_names
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - cleaning_non_use_code
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: cleaning_property_residential_type_columns
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - cleaning_column_names
+  uuid: cleaning_property_residential_type_columns
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: cleaning_non_use_code
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - cleaning_property_residential_type_columns
+  uuid: cleaning_non_use_code
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-06-23 17:51:19.715240+00:00'
+data_integration: null
+description: null
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Real_Estate_Sale_Connecticut
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: real_estate_sale_connecticut
+variables_dir: /home/src/mage_data/Real_Estate_Sale_Connecticut
+widgets: []
