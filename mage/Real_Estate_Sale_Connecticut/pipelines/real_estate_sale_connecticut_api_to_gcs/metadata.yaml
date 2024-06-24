@@ -3,7 +3,8 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - cleaning_column_names
+  - data_exporter_google_cloud_storage_full_file
+  - uploading_partitioned_file_to_gcs
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -15,58 +16,6 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: data_loading_from_api
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks:
-  - cleaning_property_residential_type_columns
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: cleaning_column_names
-  retry_config: null
-  status: executed
-  timeout: null
-  type: transformer
-  upstream_blocks:
-  - data_loading_from_api
-  uuid: cleaning_column_names
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks:
-  - cleaning_non_use_code
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: cleaning_property_residential_type_columns
-  retry_config: null
-  status: executed
-  timeout: null
-  type: transformer
-  upstream_blocks:
-  - cleaning_column_names
-  uuid: cleaning_property_residential_type_columns
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks:
-  - uploading_partitioned_file_to_gcs
-  - data_exporter_google_cloud_storage_full_file
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: cleaning_non_use_code
-  retry_config: null
-  status: executed
-  timeout: null
-  type: transformer
-  upstream_blocks:
-  - cleaning_property_residential_type_columns
-  uuid: cleaning_non_use_code
 - all_upstream_blocks_executed: true
   color: null
   configuration:
@@ -84,7 +33,7 @@ blocks:
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - cleaning_non_use_code
+  - data_loading_from_api
   uuid: data_exporter_google_cloud_storage_full_file
 - all_upstream_blocks_executed: true
   color: null
@@ -96,11 +45,11 @@ blocks:
   language: python
   name: uploading_partitioned_file_to_gcs
   retry_config: null
-  status: executed
+  status: updated
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - cleaning_non_use_code
+  - data_loading_from_api
   uuid: uploading_partitioned_file_to_gcs
 cache_block_output_in_memory: false
 callbacks: []
@@ -108,7 +57,8 @@ concurrency_config: {}
 conditionals: []
 created_at: '2024-06-23 17:51:19.715240+00:00'
 data_integration: null
-description: null
+description: Here, we're getting data from API cleaning the data and then loading
+  the data into GCS and also partitioning them
 executor_config: {}
 executor_count: 1
 executor_type: null

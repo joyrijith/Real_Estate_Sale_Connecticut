@@ -1,5 +1,6 @@
 ##importing these libraries to help partition the files and then upload it 
 ##in gcs
+import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq 
 import os
@@ -22,10 +23,13 @@ root_path= f'{bucket_name}/{table_name}'
 
 @data_exporter
 def export_data(data, *args, **kwargs):
+    #changing the date column type to datetime
+    #so that the column can be used to create partition
+    data['Date Recorded']=pd.to_datetime(data['Date Recorded'])
     
     #here we're creating a new column just month and year
     #which will be used for partitioning the file
-    data['Date_Recorded_Month_Year']=data['Date_Recorded'].dt.to_period('M').astype(str)
+    data['Date_Recorded_Month_Year']=data['Date Recorded'].dt.to_period('M').astype(str)
 
     #in pyarrow we need to define the table
     #reading the dataframe into a pyarrow table
