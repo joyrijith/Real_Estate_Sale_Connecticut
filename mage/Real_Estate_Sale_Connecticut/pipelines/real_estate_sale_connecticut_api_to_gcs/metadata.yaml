@@ -45,7 +45,7 @@ blocks:
   language: python
   name: uploading_partitioned_file_to_gcs
   retry_config: null
-  status: updated
+  status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:

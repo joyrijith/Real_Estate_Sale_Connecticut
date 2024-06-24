@@ -15,7 +15,7 @@ blocks:
   type: data_loader
   upstream_blocks: []
   uuid: data_loader_from_gcs
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration:
     file_path: data_exporters/data_export_to_bq.py
@@ -38,7 +38,7 @@ blocks:
   color: null
   configuration: {}
   downstream_blocks:
-  - cleaning_property_residential_type
+  - cleaning_property_and_residential_column
   executor_config: null
   executor_type: local_python
   has_callback: false
@@ -51,24 +51,7 @@ blocks:
   upstream_blocks:
   - data_loader_from_gcs
   uuid: cleaning_table_column_names
-- all_upstream_blocks_executed: true
-  color: null
-  configuration: {}
-  downstream_blocks:
-  - cleaning_non_use_code_column
-  executor_config: null
-  executor_type: local_python
-  has_callback: false
-  language: python
-  name: cleaning_property_residential_type
-  retry_config: null
-  status: executed
-  timeout: null
-  type: transformer
-  upstream_blocks:
-  - cleaning_table_column_names
-  uuid: cleaning_property_residential_type
-- all_upstream_blocks_executed: true
+- all_upstream_blocks_executed: false
   color: null
   configuration: {}
   downstream_blocks:
@@ -83,8 +66,25 @@ blocks:
   timeout: null
   type: transformer
   upstream_blocks:
-  - cleaning_property_residential_type
+  - cleaning_property_and_residential_column
   uuid: cleaning_non_use_code_column
+- all_upstream_blocks_executed: true
+  color: null
+  configuration: {}
+  downstream_blocks:
+  - cleaning_non_use_code_column
+  executor_config: null
+  executor_type: local_python
+  has_callback: false
+  language: python
+  name: cleaning_property_and_residential_column
+  retry_config: null
+  status: executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - cleaning_table_column_names
+  uuid: cleaning_property_and_residential_column
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
