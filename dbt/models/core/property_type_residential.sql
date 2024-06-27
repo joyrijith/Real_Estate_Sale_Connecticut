@@ -9,6 +9,7 @@ with only_residential as (
     from {{ ref('stg_real_estate_sale_connecticut_2008_to_2021') }}
 ) 
 
+
 select sold_date,
 property_type,
 residential_type,
