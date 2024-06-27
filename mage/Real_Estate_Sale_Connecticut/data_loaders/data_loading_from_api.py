@@ -12,7 +12,7 @@ def load_data_from_api(*args, **kwargs):
     """
     Template for loading data from API
     """
-    url = 'https://github.com/joyrijith/DEZoomcamp_2024/releases/download/Data/Real_Estate_Sales_2008-2021_GL.zip'
+    url = 'https://github.com/joyrijith/Real_Estate_Sale_Connecticut/releases/download/Data/Real_Estate_Sales_2008-2021_GL.zip'
     
     
     real_estate_dtypes= {
