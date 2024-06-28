@@ -24,11 +24,8 @@ source as (
         cast(assessed_value as integer) as assessed_value,
         cast(sale_amount as integer) as sale_amount,
         safe_cast(sold_to_assessed_percentage as numeric) as sold_to_assessed_percentage,
-        cast(property_type as string) as property_type,
+        cast(Property_type as string) as property_type,
         cast(residential_type as string) as residential_type,
         cast(non_use_code as string) as non_use_code
-
     from source
     where rn = 1
-   
-
