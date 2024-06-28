@@ -28,7 +28,7 @@ def transform(data, *args, **kwargs):
     #updating that to Data unavailable
     for row in range(df.shape[0]):
         if  df.iat[row,non_use_code_column_number] not in non_use_code_list:
-            df.iat[row,non_use_code_column_number]='00 - Data Unavailable'    
+            df.iat[row,non_use_code_column_number]='00 - Normal Sale'    
 
   
     
