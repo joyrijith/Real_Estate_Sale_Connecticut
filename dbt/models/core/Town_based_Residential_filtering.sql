@@ -16,6 +16,6 @@ WITH town_based_residential AS (
 
     from town_based_residential
     where (residential_type IN ('Condo' , 'Single Family', 'Two Family', 'Three Family', 'Four Family'))
-    AND EXTRACT(YEAR FROM sold_date) >= 2008
+    AND (EXTRACT(YEAR FROM sold_date) >= 2008 AND EXTRACT(YEAR FROM sold_date) <= 2021) 
     group by 1,2,3,6
    
