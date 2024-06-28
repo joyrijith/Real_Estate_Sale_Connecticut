@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: astute-backup-427300-m6
+    schema: real_estate_sale
+
+    tables:
+      - name: real_estate_sale_connecticut_2008_to_2021
