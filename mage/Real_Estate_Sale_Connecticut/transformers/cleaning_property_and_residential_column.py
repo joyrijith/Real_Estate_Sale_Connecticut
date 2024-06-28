@@ -37,11 +37,11 @@ def cleaning_property_and_residential_type(dataFrame):
             dataFrame.iat[row,property_column_number]='Data Unavailable'
             dataFrame.iat[row,residential_column_number]='Data Unavailable'
 
-    #Updating the Residential type row values to Apartments for rows
+    #Updating the Residential type row values to Condo for rows
     #which has property type Apartments.
     for row in range(dataFrame.shape[0]):
         if dataFrame.iat[row,property_column_number]=='Apartments':
-           dataFrame.iat[row,residential_column_number]='Apartments'          
+           dataFrame.iat[row,residential_column_number]='Condo'          
  
     #The below for loop converts the rows having property type as 'Apartments',
     #'Condo', 'Single Family', 'Two Family', 'Three Family', 'Four Family' to Residential
