@@ -16,3 +16,4 @@ residential_type,
 sale_amount
 from only_residential
 where property_type="Residential"
+AND EXTRACT(YEAR FROM sold_date) >= 2008

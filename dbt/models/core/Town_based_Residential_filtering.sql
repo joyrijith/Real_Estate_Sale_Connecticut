@@ -15,6 +15,7 @@ WITH town_based_residential AS (
            count(non_use_code) as number_of_non_use_transactions
 
     from town_based_residential
-    where residential_type IN ('Condo' , 'Single Family', 'Two Family', 'Three Family', 'Four Family', 'Apartments')
+    where (residential_type IN ('Condo' , 'Single Family', 'Two Family', 'Three Family', 'Four Family', 'Apartments'))
+    AND EXTRACT(YEAR FROM sold_date) >= 2008
     group by 1,2,3,6
    
