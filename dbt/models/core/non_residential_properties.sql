@@ -19,4 +19,4 @@ non_use_code
 from only_non_residential
 where property_type NOT IN ('Residential', 'Data Unavailable')
 AND (EXTRACT(YEAR FROM sold_date) >= 2008 AND EXTRACT(YEAR FROM sold_date) <= 2021) 
-group by 1, 3,2,6
+group by 1, 3,2,6 
