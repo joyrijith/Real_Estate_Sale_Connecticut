@@ -1,0 +1,97 @@
+version: 2
+
+models:
+  - name: residential_median_price_over_the_years
+    description: "Using this model we can generate the average price of the differnt Residential types over the years in differen counties "
+    columns:
+      - name: sold_date
+        data_type: date
+        description: "Date of sale of the property"
+        tests:
+          - not_null:
+              severity: error 
+
+      - name: property_type
+        data_type: string
+        description: "This model covers only Property Type residential "
+        tests:
+          - not_null:
+              severity: error 
+
+
+      - name: residential_type
+        data_type: string
+        description: "This column covers different types of residential property "
+        tests:
+          - not_null:
+              severity: error 
+          - accepted_values:
+              values: ['Single Family','Two Family','Three Family', 'Four Family','Condo']
+              severity: error 
+
+
+      - name: sale_amount
+        data_type: int64
+        description: "Property Sale value"
+        tests:
+          - not_null:
+               severity: error 
+
+
+  - name: town_based_residential_filtering
+    description: ""
+    columns:
+      - name: sale_year
+        data_type: int64
+        description: "The year of sale"
+        tests:
+          - not_null:
+              severity: error 
+
+
+      - name: town
+        data_type: string
+        description: "The name of the County / Town where the property was sold"
+        tests:
+          - not_null:
+              severity: error 
+
+
+      - name: residential_type
+        data_type: string
+        description: "This column covers different types of residential property "
+        tests:
+          - not_null:
+              severity: error 
+          - accepted_values:
+              values:
+                - ['Single Family','Two Family','Three Family', 'Four Family','Condo']
+              severity: error 
+
+      - name: number_of_properties
+        data_type: int64
+        description: "gives the count of different property type sold in a town"
+        tests:
+          - not_null:
+              severity: error 
+
+      - name: avg_sale_price
+        data_type: int64
+        description: "gives the average sale price of the property type"
+        tests:
+          - not_null:
+              severity: error 
+
+      - name: non_use_code
+        data_type: string
+        description: "Differen non use code that is assinged by the municipality if it's not a regular sale transaction"
+        tests:
+          - not_null:
+              severity: error 
+
+      - name: number_of_non_use_transactions
+        data_type: int64
+        description: "Count of the non_use_transactions"
+        tests:
+          - not_null:
+              severity: error 
