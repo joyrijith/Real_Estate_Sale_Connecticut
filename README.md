@@ -1,1 +1,10 @@
-https://lookerstudio.google.com/reporting/7e809179-0d34-426e-8575-00448cbf4f84
+# Real Estate Sale
+- Project Synopsis
+- Tools Used
+- Project Flow
+- Prerequisites
+- Running the Project
+- Visualization and Key Insights
+- Contributions
+
+### Project Synopsis
