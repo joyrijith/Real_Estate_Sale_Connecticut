@@ -42,7 +42,13 @@ Approximately 635K rows of data was analyzed for this project
 ## Prerequisites
 - **GCP**
  To run this end to end pipline, the user would need access to GCP. <br>
- In GCP, create service account for this project and have the follow access **BigQuery Admin**, **Storage Admin**, and **Compute Admin**
+ In GCP, create service account for this project and have the follow access **BigQuery Admin**, **Storage Admin**, and **Compute Admin** <br>
+ Create the json key in the service account and save the private key generated <br>
+ Save the private key file in the root folder of mage to be able to access GCP using mage
+- **dbt** Create user access in dbt for developing models
+- **docker** To compose and build mage 
+- **Google Looker Studio**  Create user access for building visualizations.
 ## Running the Project
+
 ## Visualization and Key Insights
 ## Contributions
