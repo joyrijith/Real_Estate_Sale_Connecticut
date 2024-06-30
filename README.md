@@ -30,15 +30,19 @@ Approximately 635K rows of data was analyzed for this project
 
 -  [Terraform](https://www.terraform.io/) - Used Terraform to build and tear down the GCP resources.
 ## Project Flow
-![Flow drawio](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/31290b99-d5dd-4754-bbc0-f14bb06b4643)
+![Flow drawio](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/23d6fda6-186a-4c82-ac3a-7d1d9e88c3db)
 
-1.Get the source data as CSV file <br>
-2.Using Mage, extracting data from the CSV file and storing the data in Google Cloud Storage **(Data Lake)** as parquet file <br>
-3.Using Mage, extracting data from GCS cleaning the data and loading data into Big Query **(DWH)** <br>
-4.Using DBT, extracting data from BQ to create different models for analysis <br>
-5.Using Google Looker, creating visualizations and dashboards <br>
+
+1. Get the source data as CSV file <br>
+2. Using Mage, extracting data from the CSV file and storing the data in Google Cloud Storage **(Data Lake)** as parquet file <br>
+3. Using Mage, extracting data from GCS cleaning the data and loading data into Big Query **(DWH)** <br>
+4. Using DBT, extracting data from BQ to create different models for analysis <br>
+5. Using Google Looker, creating visualizations and dashboards <br>
 
 ## Prerequisites
+- **GCP**
+ To run this end to end pipline, the user would need access to GCP. <br>
+ In GCP, create service account for this project and have the follow access **BigQuery Admin**, **Storage Admin**, and **Compute Admin**
 ## Running the Project
 ## Visualization and Key Insights
 ## Contributions
