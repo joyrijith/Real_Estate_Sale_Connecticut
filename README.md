@@ -77,10 +77,29 @@ Enter your project name, connect to the repository of your hcoice and connect to
 
 Using dbt and the data present in the DWH two models were created which would be used to analyse the Real Estate for residential properties
 ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/b76ffd9b-0fea-4c07-8344-17a84bd83ee0)
-
-
-  
-
   
 ## Visualization and Key Insights 
+**Google Looker Studio** was used to analyse the data . <br>
+The two models generated using `dbt` were used to create the analysis/dashboard. The report created can be accessed from [here](https://lookerstudio.google.com/u/0/reporting/919d1c5f-f390-4f66-afa6-9518e02b25cd/page/ZAc4D) <br>
+
+- **Key Insights** :
+  - The average sale amount is approx $275K over the years
+  - As expected, Single Family is the most sought after Residential type property
+  - The Single Family property average price has gone up by approx 200K from 2008 to 2021
+  - There has been approximately 4,300 foreclosure properties over the period 
+
+**Using the Town, Residential Type, Date Range Control drop down list different combination of data can be generated for analysis**
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/2af3cb13-cf1d-4de8-a960-6966cd157eb9) <br>
+
+- The `Town On Map` gives town location on the map of Connecticut. On hovering on the spots on map gives the **Town** name and the average sale amount in the town (including all types of residential property and sale amount between 2008 to 2021 by default. On changing the date range, the average value gets updated) <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/654f475c-7c52-428f-8b6d-aeea894e44aa) <br>
+- The `Number of Properties Sold Per Residential Type` bar graph gives the count of Residential type of property sold . The graph is dynamic and gets updated based on the town, date range selected from the drop down <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/60561c1b-8f4a-4f14-8cbc-58a93bf93681) <br>
+- The `Average Sale Amount Through The Years For Different Residential Types ` gives the time series chart of average sale amount of every residential type year over year . The data can be drilled into to view the quarter sales for every year <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/dbd7424e-782f-4c85-8650-1bbe3b0be40d) ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/fbf4488f-c01e-4a15-843b-a897440c71a9)
+- The `Non-Usable Sale Codes In Property Valuation` gives the Pie Chart representation of different non usable codes for non-regular sale transactions <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/af5fb7e7-145e-4392-9f84-8a3716f13575)
+
+
 ## Contributions
+Your inputs and contributions are always welcomed!!. Please **Fork** the repository and create a Pull Request to contibute
