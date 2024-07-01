@@ -35,10 +35,11 @@ The Dataset is also saved as .gzip file in ./Data folders
 
 
 1. Get the source data as CSV file <br>
-2. Using Mage, extracting data from the CSV file and storing the data in Google Cloud Storage **(Data Lake)** as parquet file <br>
-3. Using Mage, extracting data from GCS cleaning the data and loading data into Big Query **(DWH)** <br>
-4. Using DBT, extracting data from BQ to create different models for analysis <br>
-5. Using Google Looker, creating visualizations and dashboards <br>
+2. Set up the GCP resources using Terraform
+3. Using Mage, extracting data from the CSV file and storing the data in Google Cloud Storage **(Data Lake)** as parquet file <br>
+4. Using Mage, extracting data from GCS cleaning the data and loading data into Big Query **(DWH)** <br>
+5. Using DBT, extracting data from BQ to create different models for analysis <br>
+6. Using Google Looker, creating visualizations and dashboards <br>
 
 ## Prerequisites
 - **GCP**
