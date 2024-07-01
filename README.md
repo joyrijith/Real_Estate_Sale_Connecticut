@@ -23,7 +23,7 @@ The Dataset is also saved as .gzip file in ./Data folders
 - [Mage](https://www.mage.ai/) - **Mage** is used as the orchestration tool for this project. <br>
   Using Python/SQL data is transferred from the data source (API) to GCS (Google Cloud Storage). From GCS using Mage the data is being cleaned and uploaded in Big Query which is modelled further
 
--  [GCP](https://cloud.google.com/storage?hl=en) - **GCP** is the cloud platform utilised for this project. GCS and BQ in GCP are utislied . **GCS** is used for storing the raw data parquet file as a whole and partitioned based on month. **BQ** from GCP is used as the **Data Warehouse**.
+-  [GCP](https://cloud.google.com/storage?hl=en) - **GCP** is the cloud platform utilised for this project. GCS and BQ in GCP are utilised . **GCS** is used for storing the raw data parquet file as a whole and partitioned based on month. **BQ** from GCP is used as the **Data Warehouse**.
   
 -  [dbt](https://auth.cloud.getdbt.com/) - **DBT** is used for modelling the data present in BQ to create meaningful insights and analysis of the Real Estate Sale Data for the state of Connecticut
   
@@ -104,4 +104,4 @@ The two models generated using `dbt` were used to create the analysis/dashboard.
 
 Note- Some of the towns selected from the drop down does not show up on the map as ZIP CODE data was not available with the original dataset. This will be fixed at a later time.
 ## Contributions
-Your inputs and contributions are always welcomed!!. Please **Fork** the repository and create a Pull Request to contibute
+Your inputs and contributions are always welcomed!!. Please **Fork** the repository and create a Pull Request to contribute
