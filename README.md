@@ -17,7 +17,7 @@ In this project an end to end pipeline was built using Mage, DBT,GCP , Terraform
 ## Dataset
 The Dataset used for this project is obtained from [here](https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2021-GL/5mzw-sjtu/about_data). <br>
 The original dataset is the Real Estate Sale transactions between 2001 and 2021. The data analysed and used for the project was between 2008 to 2021. <br>
-Approximately 635K rows of data was analyzed for this project
+Approximately 635K rows of data was analyzed for this project and only **Residential Properties** were anlaysed for this project
 ## Tools Used
 - [Mage](https://www.mage.ai/) - **Mage** is used as the orchestration tool for this project. <br>
   Using Python/SQL data is transferred from the data source (API) to GCS (Google Cloud Storage). From GCS using Mage the data is being cleaned and uploaded in Big Query which is further modelled further
@@ -72,8 +72,12 @@ Pipeline `real_estate_sale_connecticut_gcs_to_bq_with_transformations` extracts 
 ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/7dfc515b-df79-4524-8a07-6f13bac62cd6)
 
 - **Modelling in dbt** - After creating profile in [dbt](https://auth.cloud.getdbt.com/) , set up your project <br>
-Enter your project name, connect to the repository of your hcoice and connect to BQ to extract the data present in the DWH
-![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/bb45dcdb-076a-4aad-8768-0cb08d66a3e8)
+Enter your project name, connect to the repository of your hcoice and connect to BQ to extract the data present in the DWH <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/bb45dcdb-076a-4aad-8768-0cb08d66a3e8) <br>
+
+Using dbt and the data present in the DWH two models were created which would be used to analyse the Real Estate for residential properties
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/b76ffd9b-0fea-4c07-8344-17a84bd83ee0)
+
 
   
 
