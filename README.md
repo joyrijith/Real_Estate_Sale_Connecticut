@@ -42,13 +42,20 @@ Approximately 635K rows of data was analyzed for this project
 ## Prerequisites
 - **GCP**
  To run this end to end pipline, the user would need access to GCP. <br>
- In GCP, create service account for this project and have the follow access **BigQuery Admin**, **Storage Admin**, and **Compute Admin** <br>
+ In GCP, create service account for this project and have the following access **BigQuery Admin**, **Storage Admin**, and **Compute Admin** <br>
  Create the json key in the service account and save the private key generated <br>
  Save the private key file in the root folder of mage to be able to access GCP using mage
 - **dbt** Create user access in dbt for developing models
 - **docker** To compose and build mage 
 - **Google Looker Studio**  Create user access for building visualizations.
 ## Running the Project
-
-## Visualization and Key Insights
+- **Clone the Repository** : Clone the repository in your local machine
+- **Download Terraform** : Donwload Terraform and set path of the Terraform file in your environment variable , and install Terraform plugin from Hashicorp in your VS code
+- **Setting Terraform** : We use GCP as the cloud platform for our project. Navigate to Terraform folder -> set the region to your region and update the  project name to your GCP project id
+- **Initializing Terraform** :  Run terraform init which will set your working directory having congiguration files.
+- **Terraform Plan** : Execute terraform plan which shows the changes that are done in the config which will take affect when Terraform Apply in executed.
+- **Terraform Apply** : This will build the resources in GCP (GCS and BQ) needed for this project
+- **Setting up Mage** : Go to Mage project folder and run docker-compose build and docker-compose up which will build the run docker-compose.yml file to run Mage
+- **Running Mage locally** : Once the docker-compose up is executed successfully go to your web broswer and search for [localhost:6789](http://localhost:6789/overview?tab=week) which will launch Mage using your local port 6789
+## Visualization and Key Insights 
 ## Contributions
