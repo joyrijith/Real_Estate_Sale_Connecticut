@@ -57,5 +57,26 @@ Approximately 635K rows of data was analyzed for this project
 - **Terraform Apply** : This will build the resources in GCP (GCS and BQ) needed for this project
 - **Setting up Mage** : Go to Mage project folder and run docker-compose build and docker-compose up which will build the run docker-compose.yml file to run Mage
 - **Running Mage locally** : Once the docker-compose up is executed successfully go to your web broswer and search for [localhost:6789](http://localhost:6789/overview?tab=week) which will launch Mage using your local port 6789
+- Once the project is setup on an editor the folder structure should look like this.<br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/7d1330d6-00cc-45bf-a609-ff02411fe750)
+
+- **Pipelines in Mage** - Once the project is cloned in your editor and mage is opened in your browser using local port, 2 pipelines should be present in Mage. <br>
+Below pipeline `Real_Estate_Sale_Connecticut_API_TO_GCS` has two loaders -
+  - Loader `data_exporter_google_cloud_storage_full_file` loads the complete data set from the source into Google Cloud Storage as a parquet file. <br>
+  - Loader `uploading_partitioned_file_to_gcs` loads the data set as partitioned parquet files in GCS. Partition is done based on every month.<br>
+  
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/cf2e21b8-3590-471a-b76c-8583171745ca)
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/848bd806-134e-48a0-9640-ca13728fc3a5)
+
+Pipeline `real_estate_sale_connecticut_gcs_to_bq_with_transformations` extracts the data from GCS cleans the data, removes unwanted data and then loads the cleaned data into BQ (DWH) <br>
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/7dfc515b-df79-4524-8a07-6f13bac62cd6)
+
+- **Modelling in dbt** - After creating profile in [dbt](https://auth.cloud.getdbt.com/) , set up your project <br>
+Enter your project name, connect to the repository of your hcoice and connect to BQ to extract the data present in the DWH
+![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/bb45dcdb-076a-4aad-8768-0cb08d66a3e8)
+
+  
+
+  
 ## Visualization and Key Insights 
 ## Contributions
