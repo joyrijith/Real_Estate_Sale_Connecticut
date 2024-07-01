@@ -17,11 +17,11 @@ In this project an end to end pipeline was built using Mage, DBT,GCP , Terraform
 ## Dataset
 The Dataset used for this project is obtained from [here](https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2021-GL/5mzw-sjtu/about_data). <br>
 The original dataset is the Real Estate Sale transactions between 2001 and 2021. The data analysed and used for the project was between 2008 to 2021. <br>
-Approximately 635K rows of data was analyzed for this project and only **Residential Properties** were anlaysed for this project
+Approximately 635K rows of data was analyzed for this project and only **Residential Properties** were anlaysed for this project <br>
 The Dataset is also saved as .gzip file in ./Data folders
 ## Tools Used
 - [Mage](https://www.mage.ai/) - **Mage** is used as the orchestration tool for this project. <br>
-  Using Python/SQL data is transferred from the data source (API) to GCS (Google Cloud Storage). From GCS using Mage the data is being cleaned and uploaded in Big Query which is further modelled further
+  Using Python/SQL data is transferred from the data source (API) to GCS (Google Cloud Storage). From GCS using Mage the data is being cleaned and uploaded in Big Query which is modelled further
 
 -  [GCP](https://cloud.google.com/storage?hl=en) - **GCP** is the cloud platform utilised for this project. GCS and BQ in GCP are utislied . **GCS** is used for storing the raw data parquet file as a whole and partitioned based on month. **BQ** from GCP is used as the **Data Warehouse**.
   
@@ -42,19 +42,19 @@ The Dataset is also saved as .gzip file in ./Data folders
 6. Using Google Looker, creating visualizations and dashboards <br>
 
 ## Prerequisites
-- **GCP**
+- **GCP** :
  To run this end to end pipline, the user would need access to GCP. <br>
  In GCP, create service account for this project and have the following access **BigQuery Admin**, **Storage Admin**, and **Compute Admin** <br>
  Create the json key in the service account and save the private key generated <br>
  Save the private key file in the root folder of mage to be able to access GCP using mage
-- **dbt** Create user access in dbt for developing models
-- **docker** To compose and build mage 
-- **Google Looker Studio**  Create user access for building visualizations.
+- **dbt** : Create user access in dbt for developing models
+- **docker** : To compose and build mage 
+- **Google Looker Studio** :  Create user access for building visualizations.
 ## Running the Project
 - **Clone the Repository** : Clone the repository in your local machine
 - **Download Terraform** : Donwload Terraform and set path of the Terraform file in your environment variable , and install Terraform plugin from Hashicorp in your VS code
-- **Setting Terraform** : We use GCP as the cloud platform for our project. Navigate to Terraform folder -> set the region to your region and update the  project name to your GCP project id
-- **Initializing Terraform** :  Run terraform init which will set your working directory having congiguration files.
+- **Setting Terraform** : GCP is the cloud platform for this project. Navigate to Terraform folder -> set the region to your region and update the  project name to your GCP project id
+- **Initializing Terraform** :  Run terraform init which will set your working directory having configuration files.
 - **Terraform Plan** : Execute terraform plan which shows the changes that are done in the config which will take affect when Terraform Apply in executed.
 - **Terraform Apply** : This will build the resources in GCP (GCS and BQ) needed for this project
 - **Setting up Mage** : Go to Mage project folder and run docker-compose build and docker-compose up which will build the run docker-compose.yml file to run Mage
@@ -74,7 +74,7 @@ Pipeline `real_estate_sale_connecticut_gcs_to_bq_with_transformations` extracts 
 ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/7dfc515b-df79-4524-8a07-6f13bac62cd6)
 
 - **Modelling in dbt** - After creating profile in [dbt](https://auth.cloud.getdbt.com/) , set up your project <br>
-Enter your project name, connect to the repository of your hcoice and connect to BQ to extract the data present in the DWH <br>
+Enter your project name, connect to the repository of your choice and connect to BQ to extract the data present in the DWH <br>
 ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/bb45dcdb-076a-4aad-8768-0cb08d66a3e8) <br>
 
 Using dbt and the data present in the DWH two models were created which would be used to analyse the Real Estate for residential properties
@@ -102,6 +102,6 @@ The two models generated using `dbt` were used to create the analysis/dashboard.
 - The `Non-Usable Sale Codes In Property Valuation` gives the Pie Chart representation of different non usable codes for non-regular sale transactions <br>
 ![image](https://github.com/joyrijith/Real_Estate_Sale_Connecticut/assets/89081604/af5fb7e7-145e-4392-9f84-8a3716f13575)
 
-
+Note- Some of the towns selected from the drop down does not show up on the map as ZIP CODE data was not available with the original dataset. This will be fixed at a later time.
 ## Contributions
 Your inputs and contributions are always welcomed!!. Please **Fork** the repository and create a Pull Request to contibute
