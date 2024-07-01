@@ -18,6 +18,7 @@ In this project an end to end pipeline was built using Mage, DBT,GCP , Terraform
 The Dataset used for this project is obtained from [here](https://data.ct.gov/Housing-and-Development/Real-Estate-Sales-2001-2021-GL/5mzw-sjtu/about_data). <br>
 The original dataset is the Real Estate Sale transactions between 2001 and 2021. The data analysed and used for the project was between 2008 to 2021. <br>
 Approximately 635K rows of data was analyzed for this project and only **Residential Properties** were anlaysed for this project
+The Dataset is also saved as .gzip file in ./Data folders
 ## Tools Used
 - [Mage](https://www.mage.ai/) - **Mage** is used as the orchestration tool for this project. <br>
   Using Python/SQL data is transferred from the data source (API) to GCS (Google Cloud Storage). From GCS using Mage the data is being cleaned and uploaded in Big Query which is further modelled further
