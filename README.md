@@ -105,3 +105,5 @@ The two models generated using `dbt` were used to create the analysis/dashboard.
 Note- Some of the towns selected from the drop down does not show up on the map as ZIP CODE data was not available with the original dataset. This will be fixed at a later time.
 ## Contributions
 Your inputs and contributions are always welcomed!!. Please **Fork** the repository and create a Pull Request to contribute
+## Contact
+Please feel free to contact me at [LinkedIn](https://www.linkedin.com/in/joy-chettiar/)
